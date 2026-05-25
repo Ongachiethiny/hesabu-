@@ -13,6 +13,7 @@ from .schemas import ElectricalPreviewRequest, MechanicalPreviewRequest, Structu
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 FRONTEND_DIR = BASE_DIR / "frontend"
+FRONTEND_DIST_DIR = FRONTEND_DIR / "dist"
 
 app = FastAPI(title="Hesabu+ API")
 
@@ -24,15 +25,15 @@ app.add_middleware(
 	allow_headers=["*"],
 )
 
-if FRONTEND_DIR.exists():
-	app.mount("/frontend", StaticFiles(directory=str(FRONTEND_DIR)), name="frontend")
+if FRONTEND_DIST_DIR.exists():
+	app.mount("/assets", StaticFiles(directory=str(FRONTEND_DIST_DIR / "assets")), name="assets")
 
 
 @app.get("/")
 def index() -> FileResponse:
-	index_path = FRONTEND_DIR / "index.html"
+	index_path = FRONTEND_DIST_DIR / "index.html"
 	if not index_path.exists():
-		raise HTTPException(status_code=404, detail="Frontend is not available")
+		raise HTTPException(status_code=404, detail="Frontend build is not available")
 	return FileResponse(index_path)
 
 

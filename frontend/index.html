@@ -1,126 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hesabu+ | Engineering Workspace</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Hesabu+ is a clean engineering workspace for mechanical, structural, and electrical calculations."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/frontend/styles.css" />
+    <title>Hesabu+ | Engineering Workspace</title>
   </head>
   <body>
-    <div class="bg-orb bg-orb-left"></div>
-    <div class="bg-orb bg-orb-right"></div>
-
-    <main class="shell">
-      <section class="hero card">
-        <div class="eyebrow">Hesabu+ Engineering Suite</div>
-        <h1>Model calculations with a cleaner, faster workflow.</h1>
-        <p class="lede">
-          A focused workspace for mechanical, structural, and electrical
-          analysis. Start with the frontend today and wire in backend logic as
-          the calculation engine grows.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button primary" href="#calculators">Open calculators</a>
-          <a class="button secondary" href="#workflow">View workflow</a>
-        </div>
-
-        <div class="metrics">
-          <div>
-            <strong>3</strong>
-            <span>calculation domains</span>
-          </div>
-          <div>
-            <strong>1</strong>
-            <span>shared workspace</span>
-          </div>
-          <div>
-            <strong>24/7</strong>
-            <span>ready for expansion</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="calculators" class="grid">
-        <article class="card panel" data-calculator="mechanical">
-          <div class="panel-head">
-            <span>Mechanical</span>
-            <span class="pill">Draft</span>
-          </div>
-          <h2>Torque and load checks</h2>
-          <p>
-            Capture dimensions, forces, and safety factors in one place before
-            the backend calculator takes over.
-          </p>
-          <label>
-            Input value
-            <input name="input_value" type="number" min="0" step="0.01" placeholder="e.g. 1250" />
-          </label>
-          <button class="button primary full" type="submit">Run preview</button>
-          <output class="result" aria-live="polite"></output>
-        </article>
-
-        <article class="card panel accent" data-calculator="structural">
-          <div class="panel-head">
-            <span>Structural</span>
-            <span class="pill">Draft</span>
-          </div>
-          <h2>Beam and section analysis</h2>
-          <p>
-            Track spans, reactions, and section properties with a layout built
-            for quick iteration.
-          </p>
-          <label>
-            Load case
-            <input name="load_case" type="text" placeholder="Dead + live load" />
-          </label>
-          <button class="button primary full" type="submit">Run preview</button>
-          <output class="result" aria-live="polite"></output>
-        </article>
-
-        <article class="card panel" data-calculator="electrical">
-          <div class="panel-head">
-            <span>Electrical</span>
-            <span class="pill">Draft</span>
-          </div>
-          <h2>Voltage and current planning</h2>
-          <p>
-            Prepare circuit parameters now so the backend can calculate the
-            practical values later.
-          </p>
-          <label>
-            Circuit label
-            <input name="circuit_label" type="text" placeholder="Lighting circuit A" />
-          </label>
-          <button class="button primary full" type="submit">Run preview</button>
-          <output class="result" aria-live="polite"></output>
-        </article>
-      </section>
-
-      <section id="workflow" class="card workflow">
-        <div>
-          <div class="eyebrow">Workflow</div>
-          <h2>Designed to bridge frontend input and backend calculation.</h2>
-        </div>
-
-        <ol>
-          <li>Capture engineering inputs in the frontend.</li>
-          <li>Send the data to backend endpoints as they are implemented.</li>
-          <li>Render clear outputs, warnings, and calculation summaries.</li>
-        </ol>
-      </section>
-    </main>
-
-    <script src="/frontend/app.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

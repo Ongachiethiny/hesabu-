@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
 :root {
   color-scheme: dark;
   --bg: #07111f;
@@ -8,7 +10,6 @@
   --muted: #a8b8d6;
   --accent: #6ee7d8;
   --accent-2: #7ab8ff;
-  --accent-3: #ffb86b;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
 }
 
@@ -23,7 +24,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(110, 231, 216, 0.14), transparent 32%),
@@ -32,7 +33,7 @@ body {
 }
 
 body::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -48,8 +49,8 @@ a {
   text-decoration: none;
 }
 
-input,
-button {
+button,
+input {
   font: inherit;
 }
 
@@ -78,7 +79,7 @@ button {
 .hero h1,
 .panel h2,
 .workflow h2 {
-  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
   letter-spacing: -0.04em;
 }
 
@@ -126,6 +127,11 @@ button {
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: progress;
 }
 
 .button.primary {

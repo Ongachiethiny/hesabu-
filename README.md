@@ -1,14 +1,18 @@
 # Hesabu+
 
-Hesabu+ is currently organized as a backend-first project.
+Hesabu+ uses a React frontend with a FastAPI backend.
 
 ## Current Layout
 
 ```text
 frontend/
 	index.html
-	styles.css
-	app.js
+	package.json
+	vite.config.js
+	src/
+		App.jsx
+		main.jsx
+		styles.css
 backend/
 	app/
 		__init__.py
@@ -26,12 +30,13 @@ backend/
 
 ## Notes
 
-- The frontend is a static single-page app for now.
-- `backend/app/main.py` serves the frontend and API.
+- The frontend is built with React and Vite.
+- `backend/app/main.py` serves the React build when available and exposes the API.
 - Calculation preview logic lives under `backend/app/modules/`.
 
 ## Run Locally
 
 1. Install backend dependencies with `pip install -r backend/requirements.txt`.
-2. Start the app with `uvicorn backend.app.main:app --reload`.
-3. Open `http://127.0.0.1:8000/` in your browser.
+2. Install frontend dependencies with `cd frontend && npm install`.
+3. Start the backend with `uvicorn backend.app.main:app --reload`.
+4. Start the React dev server with `cd frontend && npm run dev`.
