@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/frontend/styles.css" />
   </head>
   <body>
     <div class="bg-orb bg-orb-left"></div>
@@ -52,7 +52,7 @@
       </section>
 
       <section id="calculators" class="grid">
-        <article class="card panel">
+        <article class="card panel" data-calculator="mechanical">
           <div class="panel-head">
             <span>Mechanical</span>
             <span class="pill">Draft</span>
@@ -64,12 +64,13 @@
           </p>
           <label>
             Input value
-            <input type="number" placeholder="e.g. 1250" />
+            <input name="input_value" type="number" min="0" step="0.01" placeholder="e.g. 1250" />
           </label>
-          <button class="button primary full">Run preview</button>
+          <button class="button primary full" type="submit">Run preview</button>
+          <output class="result" aria-live="polite"></output>
         </article>
 
-        <article class="card panel accent">
+        <article class="card panel accent" data-calculator="structural">
           <div class="panel-head">
             <span>Structural</span>
             <span class="pill">Draft</span>
@@ -81,12 +82,13 @@
           </p>
           <label>
             Load case
-            <input type="text" placeholder="Dead + live load" />
+            <input name="load_case" type="text" placeholder="Dead + live load" />
           </label>
-          <button class="button primary full">Run preview</button>
+          <button class="button primary full" type="submit">Run preview</button>
+          <output class="result" aria-live="polite"></output>
         </article>
 
-        <article class="card panel">
+        <article class="card panel" data-calculator="electrical">
           <div class="panel-head">
             <span>Electrical</span>
             <span class="pill">Draft</span>
@@ -98,9 +100,10 @@
           </p>
           <label>
             Circuit label
-            <input type="text" placeholder="Lighting circuit A" />
+            <input name="circuit_label" type="text" placeholder="Lighting circuit A" />
           </label>
-          <button class="button primary full">Run preview</button>
+          <button class="button primary full" type="submit">Run preview</button>
+          <output class="result" aria-live="polite"></output>
         </article>
       </section>
 
@@ -118,6 +121,6 @@
       </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="/frontend/app.js"></script>
   </body>
 </html>

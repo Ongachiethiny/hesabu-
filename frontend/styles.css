@@ -218,6 +218,18 @@ button {
   line-height: 1.7;
 }
 
+.result {
+  display: block;
+  min-height: 48px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(110, 231, 216, 0.14);
+  background: rgba(4, 11, 21, 0.58);
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
 label {
   display: grid;
   gap: 8px;
